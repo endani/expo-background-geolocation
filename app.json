@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "Expo Background Geolocation",
+    "slug": "expo-background-geolocation",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "hooks": {
+      "postPublish": [{
+        "file": "sentry-expo/upload-sourcemaps",
+        "config": {
+          "organization": "creative-symbol",
+          "project": "expo-background-geolocation",
+          "authToken": "AUTH_TOKEN"
+        }
+      }]
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#3730A3"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourbundleid.app",
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "We need to access your location in background",
+        "NSLocationWhenInUseUsageDescription": "We need to access your location",
+        "NSLocationUsageDescription": "We need to access your location",
+        "UIBackgroundModes": ["location", "fetch"]
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "sdkVersion": "38.0.0",
+    "platforms": ["ios", "android", "web"],
+    "android": {
+      "package": "com.yourbundleid.app",
+      "permissions": ["VIBRATE", "ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "com.google.android.gms.permission.ACTIVITY_RECOGNITION"],
+      "versionCode": 100,
+      "useNextNotificationsApi": true,
+      "config": {
+        "googleMaps": {
+          "apiKey": "GOOGLE_MAPS_API_KEY"
+        }
+      },
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}
